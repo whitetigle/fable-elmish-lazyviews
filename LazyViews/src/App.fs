@@ -233,7 +233,7 @@ module View =
         |> Inside.Columns
 
       [
-        "OMG It's awesome!" |> Inside.H3ColoredText "black"
+        "OMG It's awesome!" |> Inside.Str => Inside.Heading.h3 
 
         buttons
 
@@ -243,17 +243,17 @@ module View =
         => Inside.Table.FullWidth []
       ]
       |> Inside.Container.Fluid
-      => Inside.Hero.FullHeightAndEscapeNavbar IsLight
+      => Inside.Hero.FullHeight IsLight
 
     | None ->
 
       [
-        "OMG It's awesome!" |> Inside.H3ColoredText "white"
+        "OMG It's awesome!" |> Inside.Str => Inside.Heading.h3 
         model.ErrorMessage |> error
       ]
       |> Inside.Notification IsSuccess
       => Inside.Container.Standard
-      => Inside.Hero.FullHeightAndEscapeNavbar IsLight
+      => Inside.Hero.FullHeight IsLight
 
 
 module State =
